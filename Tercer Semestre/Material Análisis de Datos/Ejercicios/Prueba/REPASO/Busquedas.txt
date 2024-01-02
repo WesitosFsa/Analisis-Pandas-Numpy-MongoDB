@@ -27,3 +27,20 @@ numero_mas_alto = dT['Total_n'].max()
 
 # Muestra el número más alto
 print("Número más alto:", numero_mas_alto)
+------------------------------------------------------------------------------------------------
+#•	Indique el tipo de alojamiento que hay para 6 personas.
+
+# Puedes cargar datos desde un archivo CSV u otra fuente de datos
+dA = pd.read_csv('final.csv')
+
+# Convierte la columna 'habitaciones' a tipo numérico y verifica si contiene el número 6
+filtro_habitaciones_6 = dA['Nhab'].astype(str).str.contains('6')
+
+# Filtra las filas donde la columna 'habitaciones' contiene el número 6
+df_filtrado = dA[filtro_habitaciones_6]
+
+# Muestra la información de la columna 'tipo' en las filas filtradas
+print("Información de la columna 'tipo' donde 'habitaciones' contiene el número 6:")
+print(df_filtrado['Tipo'])
+
+#str.contains('6') a str.contains('6 habitaciones')
