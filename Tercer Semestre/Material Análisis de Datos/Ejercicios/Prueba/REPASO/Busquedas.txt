@@ -1,0 +1,29 @@
+#•	Indique el alojamiento más costoso por noche.
+dN = pd.read_csv('final.csv')
+
+# Extraer números de la columna 'noche' y convertirlos a números
+dN['Noche_n'] = dN['Noche'].str.extract('(\d+)').astype(float)
+
+# Muestra el DataFrame con la nueva columna 'noche_numeros'
+print(dN)
+
+# Encuentra el número más alto en la columna 'noche_numeros'
+numero_mas_alto = dN['Noche_n'].max()
+
+# Muestra el número más alto
+print("Número más alto:", numero_mas_alto)
+------------------------------------------------------------------------------
+#•	Indique el total cancelado más costoso por un cliente.
+dT = pd.read_csv('final.csv')
+
+# Extraer números de la columna 'noche' y convertirlos a números
+dT['Total_n'] = dT['Total'].str.extract('(\d+)').astype(float)
+
+# Muestra el DataFrame con la nueva columna 'noche_numeros'
+print(dT)
+
+# Encuentra el número más alto en la columna 'noche_numeros'
+numero_mas_alto = dT['Total_n'].max()
+
+# Muestra el número más alto
+print("Número más alto:", numero_mas_alto)
